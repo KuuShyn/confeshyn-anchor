@@ -9,7 +9,7 @@ describe("mmcm_confession", () => {
 
   const program = anchor.workspace.MmcmConfession as Program<MmcmConfession>;
 
-  it("can send a new tweet", async () => {
+  it("send aconfession", async () => {
     // Create an account keypair for our program to use.
     const tweet = anchor.web3.Keypair.generate();
 
@@ -36,7 +36,7 @@ describe("mmcm_confession", () => {
     assert.ok(tweetAccount.timestamp);
   });
 
-  it("Different authors", async () => {
+  it("random test", async () => {
     // Create an account keypair for our program to use.
     const tweet = anchor.web3.Keypair.generate();
 
@@ -69,7 +69,7 @@ describe("mmcm_confession", () => {
     console.log(tweetAccount.timestamp.toNumber());
   });
 
-  it("can react to a tweet", async () => {
+  it("react to confessions", async () => {
     // Create an account keypair for our program to use.
     const tweet = anchor.web3.Keypair.generate();
 
@@ -155,7 +155,7 @@ describe("mmcm_confession", () => {
     assert.ok(tweetAccount.reactionCount.eq(new anchor.BN(2)));
   });
   let confess: any = [];
-  it("can delete a tweet", async () => {
+  it("get confessions", async () => {
     const tweets = await program.account.confession.all();
     // console.log(tweets)
     confess = tweets;
